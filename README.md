@@ -11,3 +11,5 @@
 `number_of_songs` is the number of songs you'd like `randomsong` to choose. This defaults to one.
 
 Alternatively, you may change `json_path` in line 6 of the script to point to your JSON export. Then you can omit `path_to_json_export` when running `randomsong`.
+
+## [Download randomsong](https://jmoll1125.github.io/randomsong/randomsong)
