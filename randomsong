@@ -1,0 +1,29 @@
+#!/usr/bin/python3
+#10.5.26
+import random
+import sys
+import json
+songs_list_path = ""
+songs = []
+try:
+	file = open(songs_list_path)
+except FileNotFoundError:
+	try: 
+		file = open(sys.argv[1])
+	except IndexError:
+		print("You must provide a JSON export of your Spotify playlist OR point songs_list_path in line 8 to a JSON export.")
+		sys.exit(1)
+data = file.readline()
+file.close()
+raw = json.loads(data)
+for x in range (0, len(raw)):
+	songs.append(raw[x]["artistName"]+ " - " + raw[x]["trackName"])
+try:
+	q = int(sys.argv[2])
+except IndexError:
+	try:
+		q = int(sys.argv[1])
+	except:
+		q = 1
+for x in range(0, q):
+	print(songs[random.randrange(0, len(songs))])
