@@ -3,15 +3,15 @@
 import random
 import sys
 import json
-songs_list_path = ""
+json_path = ""
 songs = []
 try:
-	file = open(songs_list_path)
+	file = open(json_path)
 except FileNotFoundError:
 	try: 
 		file = open(sys.argv[1])
 	except IndexError:
-		print("You must provide a JSON export of your Spotify playlist OR point songs_list_path in line 8 to a JSON export.")
+		print("You must provide a JSON export of your Spotify playlist OR point json_path in line 6 to a JSON export.")
 		sys.exit(1)
 data = file.readline()
 file.close()
