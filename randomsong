@@ -6,11 +6,11 @@ import json
 json_path = ""
 songs = []
 try:
-	file = open(json_path)
-except FileNotFoundError:
-	try: 
-		file = open(sys.argv[1])
-	except IndexError:
+	file = open(sys.argv[1])
+except:
+	try:
+		file = open(json_path)
+	except:
 		print("You must provide a JSON export of your Spotify playlist OR point json_path in line 6 to a JSON export.")
 		sys.exit(1)
 data = file.readline()
